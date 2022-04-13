@@ -2,7 +2,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from .serializers import UserSerializer
 from rest_framework.response import Response
-
+from rest_framework.exceptions import AuthenticationFailed
+from .models import User
 # Create your views here.
 
 class RegisterView(APIView):
@@ -11,3 +12,16 @@ class RegisterView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+
+class loginView(APIView):
+    def post(self, request):
+        email=request.data['email']
+        password=request.data['password']
+
+        user=User.objects.filter(email=email).first()
+        if user is None:
+            raise AuthenticationFailed('User does not exist')
+
+        if not user.check_password(password):
+            raise AuthenticationFailed('Incorrect password')  
+            
