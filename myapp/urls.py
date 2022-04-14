@@ -10,7 +10,7 @@ urlpatterns = [
     path('flashcards/',
          FlashcardViewSet.as_view({'get': 'list'}), name='flashcards'),
 
-    path('home/', index, name='index'),
+    path('', index, name='index'),
 
     path('register/', RegisterView.as_view()),
     path('login/', loginView.as_view()),
