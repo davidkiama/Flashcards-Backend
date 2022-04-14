@@ -16,7 +16,7 @@ This will return the token if the user is logged in succesfully.
 
 ### User - GET
 
-`https://flashcards-api-test.herokuapp.com/login/`
+`https://flashcards-api-test.herokuapp.com/user/`
 This will return the token if the user is logged in succesfully.
 
 ### All flashcards
