@@ -125,7 +125,16 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+
+ROOT_PATH = os.path.dirname(__file__)
+
+
+STATICFILES_DIRS = [os.path.join(ROOT_PATH, 'static')]
+
+
 AUTH_USER_MODEL = 'myapp.User'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
