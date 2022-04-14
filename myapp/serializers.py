@@ -5,7 +5,7 @@ from rest_framework import serializers
 class FlashcardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Flashcard
-        fields = ('user', 'front', 'back', 'created_at', 'updated_at')
+        fields = ('front', 'back', 'created_at', 'updated_at')
 
 
 class UserSerializer(serializers.ModelSerializer):
