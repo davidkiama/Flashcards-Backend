@@ -5,13 +5,13 @@ from rest_framework import serializers
 class FlashcardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Flashcard
-        fields = ('id', 'question', 'answer', 'created_at', 'updated_at')
+        fields = ('user', 'front', 'back', 'created_at', 'updated_at')
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'name', 'email', 'password']
+        fields = ['id', 'name', 'email', 'password', ]
         extra_kwargs = {
             'password': {'write_only': True}
         }

@@ -26,20 +26,6 @@ class FlashcardViewSet(viewsets.ModelViewSet):
     queryset = Flashcard.objects.all()
     serializer_class = FlashcardSerializer
 
-
-class CoursesFlashcardViewSet(viewsets.ModelViewSet):
-    queryset = Flashcard.objects.all()
-    serializer_class = FlashcardSerializer
-
-
-class SubjectsFlashcardViewSet(viewsets.ModelViewSet):
-    queryset = Flashcard.objects.get()
-    serializer_class = FlashcardSerializer
-
-
-#
-
-
 # Create your views here.
 
 
