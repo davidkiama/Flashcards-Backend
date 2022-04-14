@@ -1,10 +1,16 @@
-
-
 from django.urls import path
-from .import views
+
+from .views import RegisterView, loginView, UserView, logoutView, FlashcardViewSet, index
 
 
 urlpatterns = [
-    path('', views.FlashcardViewSet.as_view({'get': 'list'}), name='index'),
-    path('home/', views.index, name='index'),
+    path('flashcards/',
+         FlashcardViewSet.as_view({'get': 'list'}), name='flashcards'),
+
+    path('home/', index, name='index'),
+
+    path('register/', RegisterView.as_view()),
+    path('login/', loginView.as_view()),
+    path('user/', UserView.as_view()),
+    path('logout/', logoutView.as_view()),
 ]
